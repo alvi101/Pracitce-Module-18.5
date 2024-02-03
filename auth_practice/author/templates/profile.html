@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome {{user}}</h1>
+
+    {% if messages %}
+    {% for msg in messages %}
+    <h4 class="text-success">{{msg}}</h4>
+    {% endfor %}
+    {% endif %}
+
+    <br>
+    <div class="m-2">
+        <a class="btn btn-danger" href="{% url 'pass_change' %}">Change Password</a> || <a class="btn btn-warning" href="{% url 'pass_set' %}">Set Password</a>
+    </div>
+{% endblock content %}
